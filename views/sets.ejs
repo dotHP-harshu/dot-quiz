@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dot Quiz | Harsh Prajapati</title>
+    <title>Sets | dot Quiz</title>
     <link rel="stylesheet" href="/stylesheets/output.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
 
@@ -23,16 +23,20 @@
             </div>
             <div class="hero-right w-1/2 h-full flex justify-center items-center">
                 <div class="topic-container flex flex-col gap-4">
+                    <% if(sets.length > 0){%>
 
-                    <% topics.forEach((topic)=>{ %>
-                        <!-- topic  -->
-                        <a href="<%= '/sets/' + topic.name %>" class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
+                    <% sets.forEach((set, index)=>{ %>
+                        <!-- set  -->
+                        <a href="<%= set.path %>" class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
                             data-topic="html">
                             <span class="inline-block h-10 w-10 bg-white rounded-lg "></span>
-                            <h3 class="text-base ml-6"><%= topic.name %></h3>
+                            <h3 class="text-base ml-6"><%= set.name %></h3>
                         </a>
-                        <!-- topic  -->
-                     <% })%>
+                        <!-- set  -->
+                    <% })%>
+                    <% } else{%>
+                    <p class=" text-base mt-6">There is not test set.</p>
+                    <%}%>
                 </div>
             </div>
         </div>

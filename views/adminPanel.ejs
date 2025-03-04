@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Created by Harsh Prajapati -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | dot Quiz</title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+
+<body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden p-6 ">
+    <!-- ---- message ----  -->
+    <div class="message">
+        <h1 class="msg text-3xl ">Hello Admin </h1>
+        <p class="italic mt-4 text-base">Here you can create, edit and delete topics and question sets.</p>
+    </div>
+    <!-- ---- message ----  -->
+
+    <!-- ------ Add Topics -----  -->
+    <div class="addTopics bg-[var(--light-bg)] mt-6 p-4 rounded-sm">
+        <h3 class="text-base font-semibold">Add new topic </h3>
+
+        <form action="/admin/newtopic" method="post" class="p-6">
+            <label for="topicName" class="text-base">Enter your topic name <small>(folder will be created of same name and case)</small></label><br>
+            <input id="topicName" type="text" name="topicname" placeholder="Topic" class="w-80 mt-4 border-none outline-none rounded-sm px-2 py-1 text-zinc-800"><br>
+            <input type="submit" value="Add" class="mt-4 bg-[var(--green)] text-base px-4 py-2 cursor-pointer rounded-md ">
+        </form>
+    </div>
+    <!-- ------ Add Topics -----  -->
+
+    <!-- ------ Add Question set -----  -->
+    <div class="addset bg-[var(--light-bg)] mt-6 p-4 rounded-sm">
+        <h3 class="text-base font-semibold">Add new question set </h3>
+
+        <form action="/newset" method="post" class="p-6 ">
+            <label for="topics" class="text-base mt-6 inline-block">Paste the json code of questions</label><br>
+            <select name="topic" id="topics" class="text-zinc-800 px-4 py-1 outline-none cursor-pointer mt-4" >
+                <option class="hover:bg-red-400" value="">--select--</option>
+                <% topics.forEach((topic) => {%>
+                    <option class="hover:bg-red-400" value="HTML"><%= topic.name %></option>
+                    <%})%>
+            </select><br>
+            
+            <label for="setname" class="text-base mt-6 inline-block">Enter your set name <small>(file will be created of same name and case)</small></label><br>
+            <input id="setname" type="text" name="setname" placeholder="Enter the set name" class="w-80 mt-4 border-none outline-none rounded-sm px-2 py-1 text-zinc-800"><br>
+
+            <label for="questions" class="text-base mt-6 inline-block">Paste the json code of questions</label><br>
+            <textarea name="questions" id="questions" class=" text-zinc-800 mt-4 min-w-[400px] resize-none min-h-[600px]"></textarea><br>
+            <input type="submit" value="Add" class="mt-4 bg-[var(--green)] text-base px-4 py-2 cursor-pointer rounded-md ">
+        </form>
+    </div>
+    <!-- ------ Add Question set -----  -->
+
+    <!-- now add the input field to delete the files and topics  -->
+
+
+</body>
+
+</html>
