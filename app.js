@@ -16,6 +16,8 @@ const renderHome = require("./routes/home");
 const { adminPanel } = require("./routes/admin");
 const { newTopic} = require("./routes/newTopic");
 const { sets } = require('./routes/sets');
+const {getQuiz} = require("./routes/getQuiz");
+const { submit } = require('./routes/submit');
 
 
 
@@ -29,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', renderHome);
 app.get('/sets/:topicname', sets)
+app.get('/sets/:topicname/:set', getQuiz);
+app.post("/submit", submit)
 app.get('/admin/panel', adminPanel);
 app.post('/admin/newtopic', newTopic)
 

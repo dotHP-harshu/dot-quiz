@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "What does HTML stand for?",
+        "options": [
+          "HyperText Markup Language",
+          "HighText Machine Language",
+          "HyperText and links Markup Language",
+          "None of these"
+        ],
+        "correctAnswer": "HyperText Markup Language"
+      },
+      {
+        "id": 2,
+        "text": "Which HTML attribute is used to define inline styles?",
+        "options": [
+          "style",
+          "class",
+          "styles",
+          "font"
+        ],
+        "correctAnswer": "style"
+      },
+      {
+        "id": 3,
+        "text": "What is the correct HTML element for the largest heading?",
+        "options": [
+          "<h1>",
+          "<heading>",
+          "<h6>",
+          "<head>"
+        ],
+        "correctAnswer": "<h1>"
+      },
+      {
+        "id": 4,
+        "text": "Which CSS property controls the text size?",
+        "options": [
+          "font-size",
+          "text-style",
+          "text-size",
+          "font-style"
+        ],
+        "correctAnswer": "font-size"
+      },
+      {
+        "id": 5,
+        "text": "How do you add a comment in a CSS file?",
+        "options": [
+          "/* This is a comment */",
+          "// This is a comment",
+          "<!-- This is a comment -->",
+          "# This is a comment"
+        ],
+        "correctAnswer": "/* This is a comment */"
+      },
+      {
+        "id": 6,
+        "text": "Which HTML tag is used to define an internal style sheet?",
+        "options": [
+          "<style>",
+          "<css>",
+          "<script>",
+          "<head>"
+        ],
+        "correctAnswer": "<style>"
+      },
+      {
+        "id": 7,
+        "text": "How can you create an unordered list in HTML?",
+        "options": [
+          "<list>",
+          "<ol>",
+          "<ul>",
+          "<ulist>"
+        ],
+        "correctAnswer": "<ul>"
+      },
+      {
+        "id": 8,
+        "text": "Which property is used to change the background color in CSS?",
+        "options": [
+          "background-color",
+          "color",
+          "bgcolor",
+          "bg-color"
+        ],
+        "correctAnswer": "background-color"
+      },
+      {
+        "id": 9,
+        "text": "How do you select an element with id 'header' in CSS?",
+        "options": [
+          "#header",
+          ".header",
+          "header",
+          "*header"
+        ],
+        "correctAnswer": "#header"
+      },
+      {
+        "id": 10,
+        "text": "What is the default value of the `position` property in CSS?",
+        "options": [
+          "static",
+          "relative",
+          "absolute",
+          "fixed"
+        ],
+        "correctAnswer": "static"
+      }
+    ]
+  }
+  
