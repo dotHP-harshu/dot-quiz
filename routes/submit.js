@@ -8,7 +8,7 @@ module.exports.submit = (req, res) => {
         if (err) return res.send(err.message);
         
         data = JSON.parse(data)
-        let correctAnswers = data.map((question) => {
+        let correctAnswers = data.questions.map((question) => {
             return question.correctAnswer
         })
         

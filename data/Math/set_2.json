@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "What is the value of 5! (5 factorial)?",
+        "options": [
+          "120",
+          "100",
+          "60",
+          "240"
+        ],
+        "correctAnswer": "120"
+      },
+      {
+        "id": 2,
+        "text": "What is the derivative of f(x) = x²?",
+        "options": [
+          "2x",
+          "x",
+          "x²",
+          "1"
+        ],
+        "correctAnswer": "2x"
+      },
+      {
+        "id": 3,
+        "text": "What is the integral of f(x) = x?",
+        "options": [
+          "x²/2 + C",
+          "x² + C",
+          "x³/3 + C",
+          "2x + C"
+        ],
+        "correctAnswer": "x²/2 + C"
+      },
+      {
+        "id": 4,
+        "text": "What is the sum of the first 10 prime numbers?",
+        "options": [
+          "129",
+          "128",
+          "125",
+          "130"
+        ],
+        "correctAnswer": "129"
+      },
+      {
+        "id": 5,
+        "text": "What is the discriminant of the quadratic equation x² - 4x + 3 = 0?",
+        "options": [
+          "4",
+          "9",
+          "16",
+          "1"
+        ],
+        "correctAnswer": "4"
+      },
+      {
+        "id": 6,
+        "text": "What is the value of the limit lim (x → 0) of sin(x) / x?",
+        "options": [
+          "1",
+          "0",
+          "∞",
+          "2"
+        ],
+        "correctAnswer": "1"
+      },
+      {
+        "id": 7,
+        "text": "What is the value of π²?",
+        "options": [
+          "9.8696",
+          "8.789",
+          "10.56",
+          "11.57"
+        ],
+        "correctAnswer": "9.8696"
+      },
+      {
+        "id": 8,
+        "text": "What is the derivative of f(x) = sin(x)?",
+        "options": [
+          "cos(x)",
+          "sin(x)",
+          "tan(x)",
+          "1"
+        ],
+        "correctAnswer": "cos(x)"
+      },
+      {
+        "id": 9,
+        "text": "What is the value of ∫(3x² + 2x) dx?",
+        "options": [
+          "x³ + x² + C",
+          "x³ + 2x + C",
+          "x³ + x + C",
+          "x³ + x² + 2x + C"
+        ],
+        "correctAnswer": "x³ + x² + C"
+      },
+      {
+        "id": 10,
+        "text": "What is the solution to the equation e^x = 5?",
+        "options": [
+          "ln(5)",
+          "5",
+          "e",
+          "ln(e)"
+        ],
+        "correctAnswer": "ln(5)"
+      }
+    ]
+  }
+  

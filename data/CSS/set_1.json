@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "Which CSS property is used to change the color of text?",
+        "options": [
+          "color",
+          "font-color",
+          "text-color",
+          "bg-color"
+        ],
+        "correctAnswer": "color"
+      },
+      {
+        "id": 2,
+        "text": "Which CSS property is used to change the background color of an element?",
+        "options": [
+          "background-color",
+          "bg-color",
+          "color",
+          "background"
+        ],
+        "correctAnswer": "background-color"
+      },
+      {
+        "id": 3,
+        "text": "Which CSS property is used to adjust the space between characters in text?",
+        "options": [
+          "letter-spacing",
+          "line-height",
+          "word-spacing",
+          "text-spacing"
+        ],
+        "correctAnswer": "letter-spacing"
+      },
+      {
+        "id": 4,
+        "text": "Which CSS property is used to set the margin of an element?",
+        "options": [
+          "margin",
+          "padding",
+          "spacing",
+          "border"
+        ],
+        "correctAnswer": "margin"
+      },
+      {
+        "id": 5,
+        "text": "Which CSS property is used to change the font of an element?",
+        "options": [
+          "font-family",
+          "font-size",
+          "font-style",
+          "font-weight"
+        ],
+        "correctAnswer": "font-family"
+      },
+      {
+        "id": 6,
+        "text": "Which CSS property is used to define the width of an element?",
+        "options": [
+          "width",
+          "height",
+          "size",
+          "length"
+        ],
+        "correctAnswer": "width"
+      },
+      {
+        "id": 7,
+        "text": "Which CSS property is used to add a shadow effect to text?",
+        "options": [
+          "text-shadow",
+          "box-shadow",
+          "shadow-effect",
+          "background-shadow"
+        ],
+        "correctAnswer": "text-shadow"
+      },
+      {
+        "id": 8,
+        "text": "Which CSS property is used to align text to the center of an element?",
+        "options": [
+          "text-align",
+          "vertical-align",
+          "align",
+          "justify"
+        ],
+        "correctAnswer": "text-align"
+      },
+      {
+        "id": 9,
+        "text": "Which CSS property is used to make an element invisible but still take up space?",
+        "options": [
+          "visibility",
+          "opacity",
+          "display",
+          "hidden"
+        ],
+        "correctAnswer": "visibility"
+      },
+      {
+        "id": 10,
+        "text": "Which CSS property is used to create space inside an element, between its content and its border?",
+        "options": [
+          "padding",
+          "margin",
+          "spacing",
+          "border-spacing"
+        ],
+        "correctAnswer": "padding"
+      }
+    ]
+  }
+  

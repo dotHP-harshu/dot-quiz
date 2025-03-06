@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "Which HTML attribute is used to specify a unique identifier for an element?",
+        "options": [
+          "id",
+          "class",
+          "name",
+          "tag"
+        ],
+        "correctAnswer": "id"
+      },
+      {
+        "id": 2,
+        "text": "Which HTML attribute is used to specify the width of an image?",
+        "options": [
+          "width",
+          "size",
+          "dimension",
+          "length"
+        ],
+        "correctAnswer": "width"
+      },
+      {
+        "id": 3,
+        "text": "Which HTML element is used to define a citation?",
+        "options": [
+          "<cite>",
+          "<quote>",
+          "<blockquote>",
+          "<citation>"
+        ],
+        "correctAnswer": "<cite>"
+      },
+      {
+        "id": 4,
+        "text": "Which HTML tag is used to define a definition term?",
+        "options": [
+          "<dt>",
+          "<dd>",
+          "<dfn>",
+          "<def>"
+        ],
+        "correctAnswer": "<dt>"
+      },
+      {
+        "id": 5,
+        "text": "Which HTML element is used to group header content in a table?",
+        "options": [
+          "<thead>",
+          "<th>",
+          "<header>",
+          "<group>"
+        ],
+        "correctAnswer": "<thead>"
+      },
+      {
+        "id": 6,
+        "text": "Which HTML attribute is used to specify the language of the document?",
+        "options": [
+          "lang",
+          "language",
+          "locale",
+          "xml:lang"
+        ],
+        "correctAnswer": "lang"
+      },
+      {
+        "id": 7,
+        "text": "Which HTML element is used to specify a document section?",
+        "options": [
+          "<section>",
+          "<div>",
+          "<article>",
+          "<part>"
+        ],
+        "correctAnswer": "<section>"
+      },
+      {
+        "id": 8,
+        "text": "Which HTML attribute is used to specify that an input field is read-only?",
+        "options": [
+          "readonly",
+          "disabled",
+          "static",
+          "fixed"
+        ],
+        "correctAnswer": "readonly"
+      },
+      {
+        "id": 9,
+        "text": "Which HTML element is used to define a list of key-value pairs?",
+        "options": [
+          "<dl>",
+          "<kvp>",
+          "<list>",
+          "<datapair>"
+        ],
+        "correctAnswer": "<dl>"
+      },
+      {
+        "id": 10,
+        "text": "Which HTML tag is used to define a horizontal line?",
+        "options": [
+          "<hr>",
+          "<line>",
+          "<hline>",
+          "<horizontal>"
+        ],
+        "correctAnswer": "<hr>"
+      }
+    ]
+  }
+  

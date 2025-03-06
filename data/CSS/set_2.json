@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which CSS property is used to make an element's text bold?",
+      "options": [
+        "font-weight",
+        "font-style",
+        "text-weight",
+        "boldness"
+      ],
+      "correctAnswer": "font-weight"
+    },
+    {
+      "id": 2,
+      "text": "Which CSS property is used to specify the font size?",
+      "options": [
+        "font-size",
+        "font-height",
+        "text-size",
+        "size"
+      ],
+      "correctAnswer": "font-size"
+    },
+    {
+      "id": 3,
+      "text": "Which CSS property is used to create rounded corners for an element?",
+      "options": [
+        "border-radius",
+        "corner-radius",
+        "border-curvature",
+        "round-corners"
+      ],
+      "correctAnswer": "border-radius"
+    },
+    {
+      "id": 4,
+      "text": "Which CSS property is used to display an element as a block-level element?",
+      "options": [
+        "display",
+        "visibility",
+        "float",
+        "block-display"
+      ],
+      "correctAnswer": "display"
+    },
+    {
+      "id": 5,
+      "text": "Which CSS property is used to float an element to the left or right?",
+      "options": [
+        "float",
+        "position",
+        "align",
+        "shift"
+      ],
+      "correctAnswer": "float"
+    },
+    {
+      "id": 6,
+      "text": "Which CSS property is used to control the visibility of an element's content when it's overflowing its container?",
+      "options": [
+        "overflow",
+        "visibility",
+        "clip",
+        "height"
+      ],
+      "correctAnswer": "overflow"
+    },
+    {
+      "id": 7,
+      "text": "Which CSS property is used to display multiple background images?",
+      "options": [
+        "background-image",
+        "background",
+        "backgrounds",
+        "multi-background"
+      ],
+      "correctAnswer": "background-image"
+    },
+    {
+      "id": 8,
+      "text": "Which CSS property is used to control the position of a positioned element?",
+      "options": [
+        "position",
+        "top",
+        "left",
+        "z-index"
+      ],
+      "correctAnswer": "position"
+    },
+    {
+      "id": 9,
+      "text": "Which CSS property is used to change the display order of flex items?",
+      "options": [
+        "order",
+        "flex-order",
+        "flex-direction",
+        "align-items"
+      ],
+      "correctAnswer": "order"
+    },
+    {
+      "id": 10,
+      "text": "Which CSS property is used to create a grid layout?",
+      "options": [
+        "display: grid",
+        "grid-layout",
+        "grid-template",
+        "layout-grid"
+      ],
+      "correctAnswer": "display: grid"
+    }
+  ]
+}

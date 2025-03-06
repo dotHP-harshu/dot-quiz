@@ -1,0 +1,115 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "What does HTML stand for?",
+        "options": [
+          "HyperText Markup Language",
+          "HighText Machine Language",
+          "HyperText and links Markup Language",
+          "None of these"
+        ],
+        "correctAnswer": "HyperText Markup Language"
+      },
+      {
+        "id": 2,
+        "text": "Which HTML tag is used to define an internal style sheet?",
+        "options": [
+          "<style>",
+          "<css>",
+          "<script>",
+          "<link>"
+        ],
+        "correctAnswer": "<style>"
+      },
+      {
+        "id": 3,
+        "text": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+        "options": [
+          "alt",
+          "title",
+          "src",
+          "href"
+        ],
+        "correctAnswer": "alt"
+      },
+      {
+        "id": 4,
+        "text": "Which HTML element is used to define a table?",
+        "options": [
+          "<table>",
+          "<tab>",
+          "<tbl>",
+          "<t>"
+        ],
+        "correctAnswer": "<table>"
+      },
+      {
+        "id": 5,
+        "text": "Which HTML tag is used to define an unordered list?",
+        "options": [
+          "<ul>",
+          "<ol>",
+          "<li>",
+          "<list>"
+        ],
+        "correctAnswer": "<ul>"
+      },
+      {
+        "id": 6,
+        "text": "Which HTML element is used to specify a footer for a document or section?",
+        "options": [
+          "<footer>",
+          "<bottom>",
+          "<foot>",
+          "<section>"
+        ],
+        "correctAnswer": "<footer>"
+      },
+      {
+        "id": 7,
+        "text": "Which HTML tag is used to define a hyperlink?",
+        "options": [
+          "<a>",
+          "<link>",
+          "<href>",
+          "<hyperlink>"
+        ],
+        "correctAnswer": "<a>"
+      },
+      {
+        "id": 8,
+        "text": "Which HTML element defines navigation links?",
+        "options": [
+          "<nav>",
+          "<navigation>",
+          "<link>",
+          "<navigate>"
+        ],
+        "correctAnswer": "<nav>"
+      },
+      {
+        "id": 9,
+        "text": "Which HTML element is used to play video files?",
+        "options": [
+          "<video>",
+          "<media>",
+          "<movie>",
+          "<file>"
+        ],
+        "correctAnswer": "<video>"
+      },
+      {
+        "id": 10,
+        "text": "Which HTML element is used to define a header for a document or section?",
+        "options": [
+          "<header>",
+          "<head>",
+          "<heading>",
+          "<section>"
+        ],
+        "correctAnswer": "<header>"
+      }
+    ]
+  }
+  
