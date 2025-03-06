@@ -21,55 +21,58 @@
 
         <div class="question-container w-full">
             <!-- ----------------- Quiz form start -------------- -->
-            <form action="/submit" method="post" class=" w-full flex flex-col ">
+            <form action="/submit/<%= topicname %>/<%= set %>" method="post" class=" w-full flex flex-col ">
 
                 <div class="questions px-10 relative">
-<!-- ---------- Question --------  -->
-<div class="question w-full flex bg-[var(--dark-bg)] ">
-    <div class="question-para w-1/2 p-8 ">
-        <span class="italic text-[#fffe] mb-2 text-base">Question 1 of 10</span>
-        <p class="text-2xl"> <span class="mr-2">3. </span>this is question can you answer it</p>
-    </div>
-    <div class="question-option w-1/2 p-8 flex flex-col gap-2 items-start ">
-        <input type="radio" name="answer-1" value="" class="hidden" checked>
-        <label class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--light-bg)] has-[input:checked]:border-none" for="option-1-1">
-            <span class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md">A</span>
-            <input type="radio" id="option-1-1" name="answer-1" value="first option" class="hidden">
-            First option
-        </label>
 
-        <label class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--light-bg)] has-[input:checked]:border-none" for="option-1-2">
-            <span class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md">B</span>
-            <input type="radio" id="option-1-2" name="answer-1" value="second option" class="hidden" >
-            second option
-        </label>
 
-        <label class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--light-bg)] has-[input:checked]:border-none" for="option-1-3">
-            <span class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md">C</span>
-            <input type="radio" id="option-1-3" name="answer-1" value="third option" class="hidden" >
-            third option
-        </label>
+                    <% questions.forEach((question, index)=>{ %>
 
-        <label class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--light-bg)] has-[input:checked]:border-none" for="option-1-4">
-            <span class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md">D</span>
-            <input type="radio" id="option-1-4" name="answer-1" value="fourth option" class="hidden" >
-            fourth option
-        </label>
+                        <!-- ---------- Question --------  -->
+                    <div class="question w-full flex bg-[var(--dark-bg)] ">
+                        <div class="question-para w-1/2 p-8 ">
+                            <span class="italic text-[#fffe] mb-2 text-base">Question <%= index+1 %> of <%= questions.length %></span>
+                            <p class="text-2xl"> <span class="mr-2"><%= question.id %>.</span><%= question.text %></p>
+                        </div>
+                        <div class="question-option w-1/2 p-8 flex flex-col gap-2 items-start ">
+                            
+                            <% question.options.forEach((option, opitonNumber)=>{ %>
 
-    </div>
-</div>
-<!-- ---------- Question --------  -->
-                    
-                    
+                                <% let optionVar = ["A", "B", "C", "D"]; %>
+                                
+                                <input type="radio" name="answer-<%= question.id %>" value="" class="hidden" checked>
+                                <label
+                                class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--primary-color)] has-[input:checked]:border-none"
+                                for="option-<%= question.id %>-<%= opitonNumber+1 %>">
+                                <span
+                                    class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md"><%= optionVar[opitonNumber]  %></span>
+                                <input type="radio" id="option-<%= question.id %>-<%= opitonNumber+1 %>" name="answer-<%= question.id %>" value="<%= option %>" class="hidden">
+                                <%= option %>
+                            </label>
+                                
+                           <% }) %>
+
+                        </div>
+                    </div>
+                    <!-- ---------- Question --------  -->
+
+                    <% }) %>
+
                 </div>
 
                 <!-- --- Buttons -----  -->
                 <div class="buttons w-1/2  flex justify-between px-6 py-4">
-                    <button type="button" class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer" id="prev">Previous</button>
-                    <button type="button" class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer" id="next">Next</button>
-                    <button type="submit" class="border-none outline-none px-4 py-2 rounded-md bg-[var(--primary-color)] cursor-pointer" id="submit">Submit</button>
-               </div>
-               <!-- --- Buttons -----  -->
+                    <button type="button"
+                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer"
+                        id="prev">Previous</button>
+                    <button type="button"
+                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer"
+                        id="next">Next</button>
+                    <button type="submit"
+                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--primary-color)] cursor-pointer"
+                        id="submit">Submit</button>
+                </div>
+                <!-- --- Buttons -----  -->
 
             </form>
             <!-- ----------------- Quiz form start -------------- -->
@@ -81,7 +84,7 @@
 
 
     <!-- script  -->
-     <script src="/javascripts/quiz.js"></script>
+    <script src="/javascripts/quiz.js"></script>
     <!-- script  -->
 </body>
 

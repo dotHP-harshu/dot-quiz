@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', renderHome);
 app.get('/sets/:topicname', sets)
 app.get('/sets/:topicname/:set', getQuiz);
-app.post("/submit", submit)
+app.post("/submit/:topicname/:set", submit)
 app.get('/admin/panel', adminPanel);
 app.post('/admin/newtopic', newTopic)
 

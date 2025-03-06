@@ -554,20 +554,8 @@ video {
   display: none;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .relative {
   position: relative;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .mb-2 {
@@ -710,10 +698,6 @@ video {
 
 .rounded-sm {
   border-radius: 0.125rem;
-}
-
-.border {
-  border-width: 1px;
 }
 
 .border-\[1px\] {
@@ -879,4 +863,8 @@ video {
 
 .has-\[input\:checked\]\:bg-\[var\(--light-bg\)\]:has(input:checked) {
   background-color: var(--light-bg);
+}
+
+.has-\[input\:checked\]\:bg-\[var\(--primary-color\)\]:has(input:checked) {
+  background-color: var(--primary-color);
 }
