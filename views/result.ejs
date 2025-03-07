@@ -1,1 +1,98 @@
-<%=  score %>
+<!DOCTYPE html>
+<!-- Created by Harsh Prajapati -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result| dot Quiz</title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body class="bg-[var(--dark-bg)] text-white select-none overflow-hidden">
+    <!-- ------ main starts here ---------  -->
+    <main>
+        <div class="hero-container w-full min-h-[100vh] h-auto flex items-center ">
+            <div class="hero-left w-1/2 h-full flex items-center justify-center">
+                <div class="flex flex-col items-start justify-center">
+                    <h1 class="text-5xl">Welcome to the <br> <span class="font-extrabold"> Quiz App</span> </h1>
+                    <p class="italic text-base mt-6">Result</p>
+                </div>
+            </div>
+
+            <div class="hero-right w-1/2 h-full flex flex-col items-center justify-center p-4">
+                <div class="flex flex-col w-full">
+
+
+                    <div class="flex w-full">
+                        <span class="w-1/2 inline-block px-4 py-2">Total Questions</span>
+                        <span class="w-1/2 inline-block px-4 py-2">
+                            <%= totalQuestions %>
+                        </span>
+                    </div>
+                    <div class="flex w-full">
+                        <span class="w-1/2 inline-block px-4 py-2">Attempted Questions</span>
+                        <span class="w-1/2 inline-block px-4 py-2">
+                            <%= attemptAnswers %>
+                        </span>
+                    </div>
+                    <div class="flex w-full">
+                        <span class="w-1/2 inline-block px-4 py-2">Corrrect Answers</span>
+                        <span class="w-1/2 inline-block px-4 py-2">
+                            <%= score %>
+                        </span>
+                    </div>
+
+
+                </div>
+
+                <div class="flex flex-col items-start gap-2 w-full p-4">
+                    <span class="w-3/4 flex justify-between">
+                        <h1 class="text-base font-semibold">Score</h1>
+                        <h1 class="text-base font-semibold">
+                            <%= score %>/<%= totalQuestions %>
+                        </h1>
+                    </span>
+                    <div class="w-3/4 h-3 bg-[var(--light-bg)] rounded-lg overflow-hidden relative">
+                        <div class="filler inline-block h-3 rounded-lg bg-[var(--primary-color)] absolute top-0 left-0"
+                            style="width: <%= (score / totalQuestions) * 100 %>%;">
+                        </div>
+                    </div>
+                </div>
+
+                <% let percentage=(score / totalQuestions) * 100; let status="" ; if (percentage>= 100) {
+                    status = "🟣 Perfect";
+                    } else if (percentage >= 81) {
+                    status = "🔵 Excellent";
+                    } else if (percentage >= 61) {
+                    status = "🟢 Good";
+                    } else if (percentage >= 41) {
+                    status = "🟡 Average";
+                    } else if (percentage >= 21) {
+                    status = "🟠 Below Average";
+                    } else {
+                    status = "🔴 Poor";
+                    }
+                    %>
+
+                    <div class="flex w-full">
+                        <span class="w-1/2 inline-block px-4 py-2">Status</span>
+                        <span class="w-1/2 inline-block px-4 py-2">
+                            <%= status %>
+                        </span>
+                    </div>
+
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- ------ main ends here ---------  -->
+
+
+
+
+</body>
+
+</html>

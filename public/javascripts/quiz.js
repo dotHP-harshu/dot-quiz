@@ -15,9 +15,12 @@ const showQuestion = (index) => {
 }
 
 window.onload =  showQuestion(currentQuestion) // initial call to show first question
+prevBtn.disabled = true;
+prevBtn.style.opacity = 0.6; // intially disables button
 
 nextBtn.addEventListener("click", () => {
     prevBtn.disabled = false;
+    prevBtn.style.opacity = 1;
     console.log(currentQuestion)
 
     if (currentQuestion >= (allQuestions.length - 1)) {
@@ -41,6 +44,7 @@ prevBtn.addEventListener("click", () => {
 
     if (currentQuestion <= 0) {
         prevBtn.disabled = true;
+        prevBtn.style.opacity = 0.6;
     }
     else {
         currentQuestion--;

@@ -1,8 +1,11 @@
 const fs = require('fs');
 
-module.exports.submit = (req, res) => {
+module.exports.result = (req, res) => {
     let { topicname, set } = req.params;
     let givenAnswers = Object.values(req.body);
+    let totalQuestions = givenAnswers.length;
+    let attemptAnswers = givenAnswers.length;
+
     
     fs.readFile(`./data/${topicname}/${set}.json`, (err, data) => {
         if (err) return res.send(err.message);
@@ -17,9 +20,13 @@ module.exports.submit = (req, res) => {
             if (givenAnswers[i] == correctAnswers[i]) {
                 score++;
             }
+
+            if(givenAnswers[i] ==""){
+                attemptAnswers--;
+            }
         });
 
-        res.render("result",{score});
+        res.render("result",{score, totalQuestions, attemptAnswers });
     })
 
 }

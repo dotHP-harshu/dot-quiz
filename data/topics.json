@@ -1,1 +1,10 @@
-[{"id":1,"name":"Math"},{"id":2,"name":"HTML"},{"id":3,"name":"CSS"},{"id":"4","name":"DBMS"},{"id":"5","name":"OS"},{"id":"6","name":"college"}]
+{
+    "topics":
+    [
+        {"id":1,"name":"Math" , "img":"/images/Math.png"},
+        {"id":2,"name":"HTML" , "img":"/images/HTML.png"},
+        {"id":3,"name":"CSS" , "img":"/images/CSS.png"},
+        {"id":"4","name":"DBMS" , "img":"/images/DBMS.png"},
+        {"id":"5","name":"OS" , "img":"/images/OS.png"}
+    ]
+}
