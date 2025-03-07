@@ -11,36 +11,42 @@
 
 </head>
 
-<body class="bg-[var(--dark-bg)] text-white select-none overflow-hidden">
+<body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden">
     <!-- ------ main starts here ---------  -->
-    <main>
-        <div class="hero-container w-full min-h-[100vh] h-auto flex items-center ">
-            <div class="hero-left w-1/2 h-full flex items-center justify-center">
-                <div class="flex flex-col items-start justify-center">
-                    <h1 class="text-5xl">Welcome to the <br> <span class="font-extrabold"> dot Quiz</span> </h1>
-                    <p class="italic text-base mt-6">Result</p>
+    <main class="p-6">
+        <div class="w-full min-h-[100vh] h-auto flex items-center max-mobile:flex-col max-mobile:gap-6">
+            <div class="left w-1/2 h-full flex items-center justify-center max-mobile:w-full">
+                <div class="flex flex-col items-start justify-center max-mobile:items-center">
+                    <p class="italic text-base font-bold text-center">dot Quiz</p>
+                    <h1 class="text-5xl opacity-50 mt-6"><span class="font-extrabold">Result</span> </h1>
                 </div>
             </div>
 
-            <div class="hero-right w-1/2 h-full flex flex-col items-center justify-center p-4">
+            <div class="right w-1/2 h-full flex flex-col items-center justify-center p-4 max-mobile:w-full">
                 <div class="flex flex-col w-full">
 
 
                     <div class="flex w-full">
-                        <span class="w-1/2 inline-block px-4 py-2">Total Questions</span>
-                        <span class="w-1/2 inline-block px-4 py-2">
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-3/4">Total Questions</span>
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-1/4">
                             <%= totalQuestions %>
                         </span>
                     </div>
                     <div class="flex w-full">
-                        <span class="w-1/2 inline-block px-4 py-2">Attempted Questions</span>
-                        <span class="w-1/2 inline-block px-4 py-2">
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-3/4">Attempted Questions</span>
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-1/4">
                             <%= attemptAnswers %>
                         </span>
                     </div>
                     <div class="flex w-full">
-                        <span class="w-1/2 inline-block px-4 py-2">Corrrect Answers</span>
-                        <span class="w-1/2 inline-block px-4 py-2">
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-3/4">Incorrect Answers</span>
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-1/4">
+                            <%= incorrectAnswers %>
+                        </span>
+                    </div>
+                    <div class="flex w-full">
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-3/4">Corrrect Answers</span>
+                        <span class="w-1/2 inline-block px-4 py-2 max-mobile:w-1/4">
                             <%= score %>
                         </span>
                     </div>
@@ -63,23 +69,23 @@
                 </div>
 
                 <% let percentage=(score / totalQuestions) * 100; let status="" ; if (percentage>= 100) {
-                    status = "🟣 Perfect";
+                    status = "😁 Perfect";
                     } else if (percentage >= 81) {
-                    status = "🔵 Excellent";
+                    status = "😀 Excellent";
                     } else if (percentage >= 61) {
-                    status = "🟢 Good";
+                    status = "😊 Good";
                     } else if (percentage >= 41) {
-                    status = "🟡 Average";
+                    status = "😒 Average";
                     } else if (percentage >= 21) {
-                    status = "🟠 Below Average";
+                    status = "😓 Below Average";
                     } else {
-                    status = "🔴 Poor";
+                    status = "😞 Poor";
                     }
                     %>
 
                     <div class="flex w-full">
                         <span class="w-1/2 inline-block px-4 py-2">Status</span>
-                        <span class="w-1/2 inline-block px-4 py-2">
+                        <span class="w-1/2 inline-block px-4 py-2 text-xl">
                             <%= status %>
                         </span>
                     </div>
@@ -90,8 +96,11 @@
     </main>
     <!-- ------ main ends here ---------  -->
 
-
-
+    <!-- Footer start here  -->
+    <footer class="w-full mt-6 py-4 ">
+        <p class="text-base text-center ">Made by <span class="font-semibold italic">DotHp</span> with ❤️</p>
+    </footer>
+    <!-- Footer ends here -->
 
 </body>
 

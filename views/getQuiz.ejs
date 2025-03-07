@@ -14,65 +14,80 @@
 
 <body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden">
     <!-- ------ main starts here ---------  -->
-    <main class="w-full flex flex-col justify-center items-center p-10">
+    <main class="w-full flex flex-col justify-center items-center p-10 max-mobile:p-6">
         <header class="w-full flex items-center gap-4 mb-6">
             <span class="w-10 h-10 inline-block p-1 bg-[#fffe] rounded-lg">
                 <img src="/images/<%= topicname %>.png" alt="img" class="w-full h-auto object-contain object-center">
             </span>
-            <span class="text-3xl font-extrabold"><%= topicname %>/<%= set %></span>
+            <span class="text-3xl font-extrabold">
+                <%= topicname %>/<%= set %>
+            </span>
         </header>
 
         <div class="question-container w-full">
             <!-- ----------------- Quiz form start -------------- -->
             <form action="/result/<%= topicname %>/<%= set %>" method="post" class=" w-full flex flex-col ">
 
-                <div class="questions px-10 relative">
+                <div class="questions px-10 max-mobile:p-0">
 
 
                     <% questions.forEach((question, index)=>{ %>
 
                         <!-- ---------- Question --------  -->
-                    <div class="question w-full flex bg-[var(--dark-bg)] ">
-                        <div class="question-para w-1/2 p-8 ">
-                            <span class="italic text-[#fffe] text-base">Question <%= index+1 %> of <%= questions.length %></span>
-                            <p class="text-2xl mt-4"> <span class="mr-2"><%= question.id %>.</span><%= question.text %></p>
+                        <div class="question w-full flex bg-[var(--dark-bg)] max-mobile:flex-col">
+                            <!-- question para  -->
+                            <div class="question-para w-1/2 p-8 max-mobile:w-full max-mobile:px-0">
+                                <span class="italic text-[#fffe] text-base max-mobile:text-sm">Question <%= index+1 %> of <%=
+                                            questions.length %></span>
+                                <p class="text-2xl mt-4 max-mobile:text-base"> <span class="mr-2">
+                                        <%= question.id %>.
+                                    </span>
+                                    <%= question.text %>
+                                </p>
+                            </div>
+                            <!-- question para  -->
+                            <!-- options  -->
+                            <div class="question-option w-1/2 p-8 flex flex-col gap-2 items-start max-mobile:w-full max-mobile:py-0 max-mobile:text-sm">
+
+                                <% question.options.forEach((option, opitonNumber)=>{ %>
+
+                                    <% let optionVar=["A", "B" , "C" , "D" ]; %>
+
+                                        <input type="radio" name="answer-<%= question.id %>" value="" class="hidden"
+                                            checked>
+                                        <label
+                                            class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--primary-color)] has-[input:checked]:border-none max-mobile:p-2"
+                                            for="option-<%= question.id %>-<%= opitonNumber+1 %>">
+                                            <span
+                                                class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md">
+                                                <%= optionVar[opitonNumber] %>
+                                            </span>
+                                            <input type="radio" id="option-<%= question.id %>-<%= opitonNumber+1 %>"
+                                                name="answer-<%= question.id %>" value="<%= option %>" class="hidden">
+                                            <%= option %>
+                                        </label>
+
+                                        <% }) %>
+
+                            </div>
+                            <!-- options  -->
                         </div>
-                        <div class="question-option w-1/2 p-8 flex flex-col gap-2 items-start ">
-                            
-                            <% question.options.forEach((option, opitonNumber)=>{ %>
+                        <!-- ---------- Question --------  -->
 
-                                <% let optionVar = ["A", "B", "C", "D"]; %>
-                                
-                                <input type="radio" name="answer-<%= question.id %>" value="" class="hidden" checked>
-                                <label
-                                class="inline-block w-full p-4 mt-4 cursor-pointer rounded-lg bg-[#118ab255] border-[1px] border-white has-[input:checked]:bg-[var(--primary-color)] has-[input:checked]:border-none"
-                                for="option-<%= question.id %>-<%= opitonNumber+1 %>">
-                                <span
-                                    class=" inline-block text-center mr-2 h-6 w-6 bg-[#fffe] text-[var(--dark-bg)] rounded-md"><%= optionVar[opitonNumber]  %></span>
-                                <input type="radio" id="option-<%= question.id %>-<%= opitonNumber+1 %>" name="answer-<%= question.id %>" value="<%= option %>" class="hidden">
-                                <%= option %>
-                            </label>
-                                
-                           <% }) %>
-
-                        </div>
-                    </div>
-                    <!-- ---------- Question --------  -->
-
-                    <% }) %>
+                        <% }) %>
 
                 </div>
 
                 <!-- --- Buttons -----  -->
-                <div class="buttons w-1/2  flex justify-between px-6 py-4">
+                <div class="buttons w-1/2  flex justify-between px-6 py-4 max-mobile:w-full">
                     <button type="button"
-                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer"
+                        class="border-none outline-none px-4 py-2 max-mobile:text-sm rounded-md bg-[var(--light-bg)] cursor-pointer"
                         id="prev">Previous</button>
                     <button type="button"
-                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--light-bg)] cursor-pointer"
+                        class="border-none outline-none px-4 py-2 max-mobile:text-sm rounded-md bg-[var(--light-bg)] cursor-pointer"
                         id="next">Next</button>
                     <button type="submit"
-                        class="border-none outline-none px-4 py-2 rounded-md bg-[var(--primary-color)] cursor-pointer"
+                        class="border-none outline-none px-4 py-2 max-mobile:text-sm rounded-md bg-[var(--primary-color)] cursor-pointer"
                         id="submit">Submit</button>
                 </div>
                 <!-- --- Buttons -----  -->
@@ -84,7 +99,11 @@
     </main>
     <!-- ------ main ends here ---------  -->
 
-
+    <!-- Footer start here  -->
+    <footer class="w-full mt-6 py-4 ">
+        <p class="text-base text-center ">Made by <span class="font-semibold italic">DotHp</span> with ❤️</p>
+    </footer>
+    <!-- Footer ends here -->
 
     <!-- script  -->
     <script src="/javascripts/quiz.js"></script>

@@ -11,39 +11,48 @@
 
 </head>
 
-<body class="bg-[var(--dark-bg)] text-white select-none overflow-hidden">
+<body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden">
     <!-- ------ main starts here ---------  -->
-    <main>
-        <div class="hero-container w-full min-h-[100vh] h-auto flex items-center ">
-            <div class="hero-left w-1/2 h-full flex items-center justify-center">
+    <main class="p-6">
+        <div class="hero-container w-full min-h-[100vh] h-auto flex items-center max-mobile:flex-col max-mobile:gap-4">
+            <div class="hero-left w-1/2 h-full flex items-center justify-center max-mobile:w-full">
                 <div class="flex flex-col items-start justify-center">
-                    <h1 class="text-5xl">Welcome to the <br> <span class="font-extrabold"> dot Quiz</span> </h1>
+                    <h1 class="text-5xl opacity-50 max-mobile:text-3xl"><span class="font-extrabold"> dot Quiz</span> </h1>
                     <p class="italic text-base mt-6">Pick a set of questions.</p>
                 </div>
             </div>
-            <div class="hero-right w-1/2 h-full flex justify-center items-center">
+            <div class="hero-right w-1/2 h-full flex justify-center items-center max-mobile:w-full">
                 <div class="topic-container flex flex-col gap-4">
-                    <% if(sets.length > 0){%>
+                    <% if(sets.length> 0){%>
 
-                    <% sets.forEach((set, index)=>{ %>
-                        <!-- set  -->
-                        <a href="<%= set.path %>" class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
-                            data-topic="html">
-                            <span class="inline-block h-10 w-10 bg-white rounded-lg p-1">
-                                <img src="<%= set.img %>" alt="img" class="w-full h-auto object-center object-contain">
-                            </span>
-                            <h3 class="text-base ml-6"><%= set.name %></h3>
-                        </a>
-                        <!-- set  -->
-                    <% })%>
-                    <% } else{%>
-                    <p class=" text-base mt-6">There is not test set.</p>
-                    <%}%>
+                        <% sets.forEach((set, index)=>{ %>
+                            <!-- set  -->
+                            <a href="<%= set.path %>"
+                                class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
+                                data-topic="html">
+                                <span class="inline-block h-10 w-10 bg-white rounded-lg p-1">
+                                    <img src="<%= set.img %>" alt="img"
+                                        class="w-full h-auto object-center object-contain">
+                                </span>
+                                <h3 class="text-base ml-6">
+                                    <%= set.name %>
+                                </h3>
+                            </a>
+                            <!-- set  -->
+                            <% })%>
+                                <% } else{%>
+                                    <p class=" text-base mt-6">There is not test set.</p>
+                                    <%}%>
                 </div>
             </div>
         </div>
     </main>
     <!-- ------ main ends here ---------  -->
+    <!-- Footer start here  -->
+    <footer class="w-full mt-6 py-4 ">
+        <p class="text-base text-center ">Made by <span class="font-semibold italic">DotHp</span> with ❤️</p>
+    </footer>
+    <!-- Footer ends here -->
 </body>
 
 </html>

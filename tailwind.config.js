@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./views/*.ejs"],
   theme: {
-    extend: {},
+    extend: {
+      screens:{
+        mobile:"425px",
+      }
+    },
   },
   plugins: [],
 }

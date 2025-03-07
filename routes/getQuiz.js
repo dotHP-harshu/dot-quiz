@@ -3,7 +3,7 @@ module.exports.getQuiz = (req, res) =>{
     let {topicname, set} = req.params;
 
     fs.readFile(`./data/${topicname}/${set}.json`, (err, data)=>{
-        if(err) return res.send(err.message);
+        if(err) return res.render("404");
         questions = JSON.parse(data).questions;
         // Fisher-Yates Shuffle Algorithm
         function shuffleArray(array) {
