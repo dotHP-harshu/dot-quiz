@@ -8,5 +8,6 @@ module.exports.adminPanel =  (req, res) => {
         if (err) return res.send(err.message)
         topics = JSON.parse(data).topics;
         res.render("adminPanel", { topics });
+        // res.send(topics);
     })
 }

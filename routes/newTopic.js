@@ -1,18 +1,35 @@
-const fs = require("fs")
+const fs = require("fs");
 
-module.exports.newTopic = (req, res)=>{
-    let {topicname } = req.body;
 
-    fs.readFile("./data/topics.json",(err, data)=>{
-        if(err) return res.send(err.message);
-        data = JSON.parse(data); // Get data in the form or array (parse the file into data)
+module.exports.newTopic = (req, res) => {
+    let { topicname } = req.body;
+    let topicIcon = req.file;
 
-        let existedNames = data.filter((topic)=>{return topic.name===topicname});
-        if(existedNames.length>0) return res.send("Topic is already existed.");
-
-        data.push({ id:`${data.length+1}`, name:topicname,}); // push the topic name in the json file
-        fs.writeFile("./data/topics.json", JSON.stringify(data), (err)=>{
-            if(err) console.log(err.message);
+    fs.readFile("./data/topics.json", (err, data) => {
+        if (err) {
+            fs.unlink("./public/images/"+topicIcon.filename, (err)=>{
+                if(err) return res.send(err.message)
+            })
+            return res.send(err.message);
+        }
+        data = JSON.parse(data).topics; // Get data in the form or array (parse the file into data)
+        
+        let existedNames = data.filter((topic) => { return topic.name === topicname });
+        if (existedNames.length > 0) {
+            fs.unlink("./public/images/"+topicIcon.filename, (err)=>{
+                if(err) return res.send(err.message)
+            })
+            return res.send("Topic is already existed.");
+        }
+        data.push({ id: `${data.length + 1}`, name: topicname, img: `/images/${topicIcon.filename}` }); // push the topic name in the json file
+        let updatedTopics = {
+            "topics" : data
+        }
+        fs.mkdir(`./data/${topicname}`, (err)=>{
+            if(err) return res.send(err.message)
+        });
+        fs.writeFile("./data/topics.json", JSON.stringify(updatedTopics), (err)=>{
+            if(err) return res.send(err.message);
         });
         res.redirect('/admin/panel');
     })

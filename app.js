@@ -4,7 +4,6 @@ const path = require('path');
 
 
 
-
 // Body Parsers
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +17,7 @@ const { newTopic } = require("./routes/newTopic");
 const { sets } = require('./routes/sets');
 const { getQuiz } = require("./routes/getQuiz");
 const { result } = require('./routes/submit');
+const upload = require("./utils/getImage")
 
 
 
@@ -34,7 +34,10 @@ app.get('/sets/:topicname', sets)
 app.get('/sets/:topicname/:set', getQuiz);
 app.post("/result/:topicname/:set", result)
 app.get('/admin/panel', adminPanel);
-app.post('/admin/newtopic', newTopic)
+app.post('/admin/newtopic',upload.single('topicIcon'), newTopic)
+
+
+
 
 app.use((req, res) => {
     res.status(404).render("404")

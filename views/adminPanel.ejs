@@ -24,11 +24,14 @@
     <div class="addTopics bg-[var(--light-bg)] mt-6 p-4 rounded-sm">
         <h3 class="text-base font-semibold">Add new topic </h3>
 
-        <form action="/admin/newtopic" method="post" class="p-6">
+        <form action="/admin/newtopic" method="post" class="p-6" enctype="multipart/form-data">
             <label for="topicName" class="text-base">Enter your topic name <small>(folder will be created of same name
                     and case)</small></label><br>
             <input id="topicName" type="text" name="topicname" placeholder="Topic"
                 class="w-80 mt-4 border-none outline-none rounded-sm px-2 py-1 text-zinc-800 max-mobile:min-w-full"><br>
+            
+                <label for="topicIcon" class="inline-block text-base mt-4">Selet an icon related to topic</label><br>
+                <input type="file" name="topicIcon" id="topicIcon" class="mt-4 border-none outline-none rounded-sm px-2 py-1 text-zinc-800 max-mobile:min-w-full"><br>
             <input type="submit" value="Add"
                 class="mt-4 bg-[var(--green)] text-base px-4 py-2 cursor-pointer rounded-md  ">
         </form>

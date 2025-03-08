@@ -1,10 +1,1 @@
-{
-    "topics":
-    [
-        {"id":1,"name":"Math" , "img":"/images/Math.png"},
-        {"id":2,"name":"HTML" , "img":"/images/HTML.png"},
-        {"id":3,"name":"CSS" , "img":"/images/CSS.png"},
-        {"id":"4","name":"DBMS" , "img":"/images/DBMS.png"},
-        {"id":"5","name":"OS" , "img":"/images/OS.png"}
-    ]
-}
+{"topics":[{"id":1,"name":"Math","img":"/images/Math.png"},{"id":2,"name":"HTML","img":"/images/HTML.png"},{"id":3,"name":"CSS","img":"/images/CSS.png"},{"id":"4","name":"DBMS","img":"/images/DBMS.png"},{"id":"5","name":"OS","img":"/images/OS.png"},{"id":"6","name":"ESD","img":"/images/aaf2efae0ee8be4ed3f20497.png"}]}
