@@ -21,7 +21,7 @@ module.exports.newTopic = (req, res) => {
             })
             return res.send("Topic is already existed.");
         }
-        data.push({ id: `${data.length + 1}`, name: topicname, img: `/images/${topicIcon.filename}` }); // push the topic name in the json file
+        data.push({ id: `${data.length + 1}`, name: topicname, img: `/images/${topicIcon.filename}`, "sets":[]}); // push the topic name in the json file
         let updatedTopics = {
             "topics" : data
         }

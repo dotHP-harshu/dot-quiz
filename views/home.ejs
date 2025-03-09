@@ -24,17 +24,24 @@
             <div class="hero-right w-1/2 h-full flex justify-center items-center max-mobile:w-full">
                 <div class="topic-container flex flex-col gap-4">
 
-                    <% topics.forEach((topic)=>{ %>
-                        <!-- topic  -->
-                        <a href="<%= '/sets/' + topic.name %>" class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
-                            data-topic="html">
-                            <span class="inline-block h-10 w-10 bg-white rounded-lg p-1 ">
-                                <img src="<%= topic.img %>" alt="img" class="w-full h-auto object-contain object-center">
-                            </span>
-                            <h3 class="text-base ml-6"><%= topic.name %></h3>
-                        </a>
-                        <!-- topic  -->
-                     <% })%>
+                    
+                    <% if(topics.length>0){ %>
+                        <% topics.forEach((topic)=>{ %>
+                            <!-- topic  -->
+                            <a href="<%= '/sets/' + topic.name %>" class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
+                                data-topic="html">
+                                <span class="inline-block h-10 w-10 bg-white rounded-lg p-1 ">
+                                    <img src="<%= topic.img %>" alt="img" class="w-full h-auto object-contain object-center">
+                                </span>
+                                <h3 class="text-base ml-6"><%= topic.name %></h3>
+                            </a>
+                            <!-- topic  -->
+                         <% })%>
+                    <% }else{ %>
+                        <p class="text-base">There is no subject 😓. Please contact to admin to add subjects.</p>
+                    <% } %>
+                   
+                    
                 </div>
             </div>
         </div>

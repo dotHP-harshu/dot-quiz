@@ -17,7 +17,8 @@ const { newTopic } = require("./routes/newTopic");
 const { sets } = require('./routes/sets');
 const { getQuiz } = require("./routes/getQuiz");
 const { result } = require('./routes/submit');
-const upload = require("./utils/getImage")
+const upload = require("./utils/getImage");
+const { newSet } = require('./routes/newSet');
 
 
 
@@ -35,6 +36,7 @@ app.get('/sets/:topicname/:set', getQuiz);
 app.post("/result/:topicname/:set", result)
 app.get('/admin/panel', adminPanel);
 app.post('/admin/newtopic',upload.single('topicIcon'), newTopic)
+app.post('/admin/newset',newSet )
 
 
 
