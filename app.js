@@ -23,7 +23,7 @@ const { result } = require('./routes/submit');
 const upload = require("./utils/getImage");
 const { newSet } = require('./routes/newSet');
 const { adminLoginPage } = require('./routes/adminLogin');
-const { authAdmin } = require('./routes/authadmin');
+const { authAdmin } = require('./routes/authAdmin');
 const { adminAuthorisation } = require('./middlewares/adminAuthorisation');
 const { logoutAdmin } = require('./routes/logoutAdmin');
 
