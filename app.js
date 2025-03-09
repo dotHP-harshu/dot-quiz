@@ -1,24 +1,31 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cookieParser = require("cookie-parser");
 
 
 
 // Body Parsers
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 
 
 
 // Routers
 const renderHome = require("./routes/home");
-const { adminPanel } = require("./routes/admin");
+const { adminPanel } = require("./routes/adminPanel");
 const { newTopic } = require("./routes/newTopic");
 const { sets } = require('./routes/sets');
 const { getQuiz } = require("./routes/getQuiz");
 const { result } = require('./routes/submit');
 const upload = require("./utils/getImage");
 const { newSet } = require('./routes/newSet');
+const { adminLoginPage } = require('./routes/adminLogin');
+const { authAdmin } = require('./routes/authadmin');
+const { adminAuthorisation } = require('./middlewares/adminAuthorisation');
+const { logoutAdmin } = require('./routes/logoutAdmin');
 
 
 
@@ -33,10 +40,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', renderHome);
 app.get('/sets/:topicname', sets)
 app.get('/sets/:topicname/:set', getQuiz);
-app.post("/result/:topicname/:set", result)
-app.get('/admin/panel', adminPanel);
-app.post('/admin/newtopic',upload.single('topicIcon'), newTopic)
-app.post('/admin/newset',newSet )
+app.post("/result/:topicname/:set", result);
+app.get('/login/admin', adminLoginPage)
+app.post('/authadmin', authAdmin);
+app.get('/admin/panel',adminAuthorisation, adminPanel);
+app.post('/admin/newtopic',adminAuthorisation,upload.single('topicIcon'), newTopic)
+app.post('/admin/newset',adminAuthorisation, newSet );
+app.get('/logout/admin',logoutAdmin)
 
 
 

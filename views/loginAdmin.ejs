@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Created by Harsh Prajapati -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin | dot Quiz</title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden">
+    <!-- ------ main starts here ---------  -->
+    <main class="p-6">
+        <div class="container w-full min-h-[100vh] h-auto flex items-center max-mobile:flex-col max-mobile:gap-6">
+            <div class="left w-1/2 h-full flex items-center justify-center max-mobile:w-full">
+                <div class="flex flex-col items-start justify-center">
+                    <h1 class="text-5xl max-mobile:text-3xl">Welcome to the <br> <span class="font-extrabold"> dot
+                            Quiz</span> </h1>
+                    <p class="italic text-base mt-6">Please enter the email and password to login.</p>
+                </div>
+            </div>
+            <div class="right w-1/2 h-full flex justify-center items-center max-mobile:w-full">
+
+                <form action="/authadmin" class="bg-white p-6" method="post">
+                    <input required type="email" name="email" placeholder="email" class="outline-none border-none bg-[var(--light-bg)] rounded-sm max-mobile:text-sm text-white px-4 py-2 w-80 max-mobile:w-full mt-2"><br>
+                    <input required type="password" name="password" placeholder="password" class="outline-none border-none bg-[var(--light-bg)] rounded-sm max-mobile:text-sm text-white px-4 py-2 w-80 max-mobile:w-full mt-2"><br>
+                    <input type="submit" value="Submit" class="bg-[var(--dark-bg)] px-4 py-2 rounded-sm mt-2 cursor-pointer max-mobile:text-sm"><br>
+                </form>
+
+            </div>
+    </main>
+    <!-- ------ main ends here ---------  -->
+
+    <!-- Footer start here  -->
+    <footer class="w-full mt-6 py-4 ">
+        <p class="text-base text-center ">Made by <span class="font-semibold italic">DotHp</span> with ❤️</p>
+    </footer>
+    <!-- Footer ends here -->
+</body>
+
+</html>
