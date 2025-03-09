@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Which CSS property is used to control the spacing between grid items?",
+      "options": [
+        "grid-gap",
+        "gap",
+        "grid-spacing",
+        "spacing"
+      ],
+      "correctAnswer": "gap"
+    },
+    {
+      "id": 2,
+      "text": "Which CSS property is used to create a flexible container with flexible items?",
+      "options": [
+        "display: flex",
+        "flex-layout",
+        "flex-container",
+        "flexbox"
+      ],
+      "correctAnswer": "display: flex"
+    },
+    {
+      "id": 3,
+      "text": "Which CSS property is used to change the direction of flex items?",
+      "options": [
+        "flex-direction",
+        "direction",
+        "flow",
+        "align-items"
+      ],
+      "correctAnswer": "flex-direction"
+    },
+    {
+      "id": 4,
+      "text": "Which CSS property is used to control how flex items are aligned in a container?",
+      "options": [
+        "align-items",
+        "justify-content",
+        "align-content",
+        "align-flex"
+      ],
+      "correctAnswer": "align-items"
+    },
+    {
+      "id": 5,
+      "text": "Which CSS property is used to set the size of a flex item?",
+      "options": [
+        "flex-basis",
+        "flex-grow",
+        "flex-shrink",
+        "flex-size"
+      ],
+      "correctAnswer": "flex-basis"
+    },
+    {
+      "id": 6,
+      "text": "Which CSS property is used to control the placement of grid items in a grid container?",
+      "options": [
+        "grid-template-areas",
+        "grid-template-columns",
+        "grid-template-rows",
+        "grid-placement"
+      ],
+      "correctAnswer": "grid-template-areas"
+    },
+    {
+      "id": 7,
+      "text": "Which CSS property is used to create a CSS transition effect?",
+      "options": [
+        "transition",
+        "animate",
+        "effect",
+        "transition-effect"
+      ],
+      "correctAnswer": "transition"
+    },
+    {
+      "id": 8,
+      "text": "Which CSS property is used to set the duration of a transition?",
+      "options": [
+        "transition-duration",
+        "duration",
+        "transition-time",
+        "time-duration"
+      ],
+      "correctAnswer": "transition-duration"
+    },
+    {
+      "id": 9,
+      "text": "Which CSS property is used to add a 3D transformation effect to an element?",
+      "options": [
+        "transform",
+        "transform3d",
+        "perspective",
+        "rotate3d"
+      ],
+      "correctAnswer": "transform"
+    },
+    {
+      "id": 10,
+      "text": "Which CSS property is used to create a responsive layout by changing the display mode based on screen size?",
+      "options": [
+        "media queries",
+        "responsive-layout",
+        "display: responsive",
+        "screen-size"
+      ],
+      "correctAnswer": "media queries"
+    }
+  ]
+}

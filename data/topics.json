@@ -1,3 +1,1 @@
-{
-    "topics":[]
-}
+{"topics":[{"id":"1","name":"HTML","img":"/images/e3daf510e64c0d2e357171e9.png","sets":["set_1","set_2","set_3"]},{"id":"2","name":"CSS","img":"/images/1d7b46dabff6f528c232e965.png","sets":["set_1","set_2","set_3","set_4","set_5"]},{"id":"3","name":"DBMS","img":"/images/221524f433f773a5de6de3ab.png","sets":["chapter_1","chapter_2","chapter_3"]},{"id":"4","name":"OS","img":"/images/e19deb6211c5483a02c07269.png","sets":[]}]}

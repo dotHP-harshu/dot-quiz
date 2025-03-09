@@ -1,0 +1,169 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is a Database Management System (DBMS), and how does it differ from a traditional file system?",
+      "options": [
+        "DBMS is a software for managing databases, whereas a file system handles individual files separately.",
+        "DBMS is a type of file system that organizes files in a structured manner.",
+        "File systems are more efficient than DBMS for handling large amounts of data.",
+        "DBMS does not provide data security, while file systems do."
+      ],
+      "correctAnswer": "DBMS is a software for managing databases, whereas a file system handles individual files separately."
+    },
+    {
+      "id": 2,
+      "text": "What are the key advantages of a DBMS over a file system?",
+      "options": [
+        "DBMS provides better data integrity, security, and eliminates redundancy compared to file systems.",
+        "File systems allow multiple users to access data simultaneously, whereas DBMS does not.",
+        "DBMS does not support data consistency, whereas file systems do.",
+        "DBMS is more complex than file systems, making it less efficient."
+      ],
+      "correctAnswer": "DBMS provides better data integrity, security, and eliminates redundancy compared to file systems."
+    },
+    {
+      "id": 3,
+      "text": "What are the main components of a DBMS?",
+      "options": [
+        "Hardware, Software, Data, Users, Database Schema",
+        "Hardware, File System, Compiler, Queries",
+        "Software, Data, RAM, CPU",
+        "Tables, Functions, Algorithms, Users"
+      ],
+      "correctAnswer": "Hardware, Software, Data, Users, Database Schema"
+    },
+    {
+      "id": 4,
+      "text": "What is Data Abstraction in DBMS?",
+      "options": [
+        "Hiding the complex internal details of how data is stored and maintained, allowing users to interact with a simplified model.",
+        "Showing all data to the user without any restrictions.",
+        "A process that stores all data in raw format without processing.",
+        "A feature of file systems, not DBMS."
+      ],
+      "correctAnswer": "Hiding the complex internal details of how data is stored and maintained, allowing users to interact with a simplified model."
+    },
+    {
+      "id": 5,
+      "text": "What are the three levels of Data Abstraction in DBMS?",
+      "options": [
+        "Physical Level, Logical Level, View Level",
+        "File Level, Schema Level, User Level",
+        "Primary Level, Secondary Level, Tertiary Level",
+        "Storage Level, Query Level, Index Level"
+      ],
+      "correctAnswer": "Physical Level, Logical Level, View Level"
+    },
+    {
+      "id": 6,
+      "text": "What is Physical Level Data Abstraction?",
+      "options": [
+        "It describes how data is stored in the database, including file storage structures and indexing.",
+        "It defines how users interact with data without worrying about storage details.",
+        "It only shows a limited amount of data to authorized users.",
+        "It is used only in file systems and not in DBMS."
+      ],
+      "correctAnswer": "It describes how data is stored in the database, including file storage structures and indexing."
+    },
+    {
+      "id": 7,
+      "text": "What is Logical Level Data Abstraction?",
+      "options": [
+        "It defines the structure of the entire database, including relationships, constraints, and tables.",
+        "It deals with the physical storage of data on the hard disk.",
+        "It provides security by restricting data access to certain users.",
+        "It defines how data is presented to the end users."
+      ],
+      "correctAnswer": "It defines the structure of the entire database, including relationships, constraints, and tables."
+    },
+    {
+      "id": 8,
+      "text": "What is View Level Data Abstraction?",
+      "options": [
+        "It provides a customized representation of the database for different users.",
+        "It defines how data is stored physically.",
+        "It describes how data is structured logically.",
+        "It is used only in file systems, not DBMS."
+      ],
+      "correctAnswer": "It provides a customized representation of the database for different users."
+    },
+    {
+      "id": 9,
+      "text": "What is Data Independence in DBMS?",
+      "options": [
+        "The ability to modify the database schema at one level without affecting the schema at the next higher level.",
+        "A feature that allows users to access all the data without restrictions.",
+        "A property of file systems that improves performance.",
+        "The ability to retrieve data without using queries."
+      ],
+      "correctAnswer": "The ability to modify the database schema at one level without affecting the schema at the next higher level."
+    },
+    {
+      "id": 10,
+      "text": "What are the two types of Data Independence?",
+      "options": [
+        "Logical Data Independence and Physical Data Independence",
+        "File Data Independence and Query Data Independence",
+        "User Data Independence and Server Data Independence",
+        "Primary Data Independence and Secondary Data Independence"
+      ],
+      "correctAnswer": "Logical Data Independence and Physical Data Independence"
+    },
+    {
+      "id": 11,
+      "text": "What is Logical Data Independence?",
+      "options": [
+        "The ability to change the logical structure of the database without affecting applications that use it.",
+        "The ability to change the physical storage structure without affecting the logical schema.",
+        "A method used to store data in file systems.",
+        "The ability to change the data format without affecting performance."
+      ],
+      "correctAnswer": "The ability to change the logical structure of the database without affecting applications that use it."
+    },
+    {
+      "id": 12,
+      "text": "What is Physical Data Independence?",
+      "options": [
+        "The ability to modify the physical storage of data without affecting the logical structure.",
+        "The ability to modify database queries without affecting data retrieval.",
+        "A technique used only in file systems.",
+        "A feature that allows multiple users to access data simultaneously."
+      ],
+      "correctAnswer": "The ability to modify the physical storage of data without affecting the logical structure."
+    },
+    {
+      "id": 13,
+      "text": "What are the three levels of DBMS architecture?",
+      "options": [
+        "Internal Level, Conceptual Level, External Level",
+        "File Level, Query Level, Index Level",
+        "Application Level, Database Level, Server Level",
+        "Primary Level, Secondary Level, Tertiary Level"
+      ],
+      "correctAnswer": "Internal Level, Conceptual Level, External Level"
+    },
+    {
+      "id": 14,
+      "text": "What is the role of the Internal Level in DBMS architecture?",
+      "options": [
+        "It defines how data is physically stored on storage devices.",
+        "It represents the logical structure of the entire database.",
+        "It provides different views for different users.",
+        "It deals with query processing only."
+      ],
+      "correctAnswer": "It defines how data is physically stored on storage devices."
+    },
+    {
+      "id": 15,
+      "text": "What is the function of the External Level in DBMS architecture?",
+      "options": [
+        "It provides individual users with different views of the database as per their needs.",
+        "It handles data storage and indexing.",
+        "It defines how tables are structured at a physical level.",
+        "It ensures that only admins can access the database."
+      ],
+      "correctAnswer": "It provides individual users with different views of the database as per their needs."
+    }
+  ]
+}
