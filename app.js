@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -60,7 +61,7 @@ const PORT = process.env.PORT || 3000;
 
 const startApp = async()=>{
     try{
-        await connectDB("mongodb://127.0.0.1:27017/quiz");
+        await connectDB(process.env.DB_URI);
         app.listen(PORT);
     }catch(err){
         console.log(err)

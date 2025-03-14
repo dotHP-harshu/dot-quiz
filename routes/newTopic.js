@@ -6,7 +6,7 @@ module.exports.newTopic = async (req, res) => {
         let topicname = req.body.topicname;
 
 
-        let topic = await topicModel.find({topicname:topicname});
+        let topic = await topicModel.findOne({topicname:topicname});
         if(topic) return res.status(400).json({message:"Topic already existed in the list."})
         
         
