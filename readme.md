@@ -1,7 +1,21 @@
+# Table of content
+[🎯 About the project](#-about-the-project)
+[✨ Key features](#-key-features)
+[🚀 Installation & Setup](#-installation--setup)
+[📖 How to Use](#-how-to-use)
+[🔗 Live Preview](#-live-preview)
+[🖼️ Screenshots](#️-screenshots)
+[🛠️ Technologies Used](#️-technologies-used)
+[🤝 Contributing](#-contributing)
+[📜 License](#-license)
+[📬 Contact & Support](#-contact--support)
+
 # 🎯 Dot Quiz - The Ultimate Quiz Experience
 
 ## 📌 About the Project
 Dot Quiz is a dynamic and interactive quiz application designed to challenge users with thought-provoking questions across multiple categories. Whether you're looking to test your knowledge or improve your skills, Dot Quiz provides a seamless and engaging experience.
+
+This app has its admin panel to make control on quiz content. It also follows the authentication for admin login and logout functionality. An admin can add, delete and control the database.
 
 ---
 
@@ -9,9 +23,10 @@ Dot Quiz is a dynamic and interactive quiz application designed to challenge use
 
 ✅ **Engaging Quizzes** - Multiple categories with diverse questions  
 ✅ **Real-time Score Tracking** - See how well you perform instantly  
-✅ **Beautiful UI** - Sleek, responsive design powered by Tailwind CSS  
+✅ **Beautiful UI** - Sleek, responsive design powered by Tailwind CSS.
 ✅ **Lightweight & Fast** - Optimized for smooth performance  
 ✅ **Easy to Use** - Simple navigation and intuitive interface  
+✅ **Admin Panel** - There is an admin panel to control the quiz content.  
 
 ---
 
@@ -58,11 +73,19 @@ npm start
 
 ---
 
+## 🔗 Live Preview
+
+Check out it from this [link](https://leading-karia-harsh1234-0f91fb46.koyeb.app/ 'Live Preview') . 
+
+---
+
 ## 🖼️ Screenshots
 
 ![home](./public/images/readmeScreenshots/img_1.png 'Home page Preview')
 ![subjects](./public/images/readmeScreenshots/img_2.png 'Subject page Preview')
 ![quiz](./public/images/readmeScreenshots/img_3.png 'Test page Preview')
+![quiz](./public/images/readmeScreenshots/img_4.png 'Login Page for admin')
+![quiz](./public/images/readmeScreenshots/img_5.png 'Admin panel')
 
 ---
 
@@ -85,7 +108,7 @@ This project is licensed under the **MIT License** – free to use and modify!
 
 ## 📬 Contact & Support
 
-Hey there! 👋 I’m **Harsh Prajapati** ❤️, you can reach from below links👇
+Hey there! 👋 I’m **Harsh Prajapati** ❤️, you can reach me from below links👇
 
 📌 **GitHub**: [dothp-harshu](https://github.com/dothp-harshu)  
 📌 **Email**: [harshprajapaticoding@gmail.com](mailto:harshprajapaticoding@gmai.com)  
