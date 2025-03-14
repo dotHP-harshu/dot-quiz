@@ -27,12 +27,11 @@
 
                         <% sets.forEach((set, index)=>{ %>
                             <!-- set  -->
-                            <a href="<%= set.path %>"
+                            <a href="<%= '/quiz/'+ set.id %>"
                                 class="topic w-80 bg-[var(--light-bg)] p-4 flex items-center rounded-lg cursor-pointer"
-                                data-topic="html">
+                                >
                                 <span class="inline-block h-10 w-10 bg-white rounded-lg p-1">
-                                    <img src="<%= set.img %>" alt="img"
-                                        class="w-full h-auto object-center object-contain">
+                                    <img src="data:<%= icon.type %>; base64, <%= icon.img.toString('base64') %>" alt="<%= set.name %>" class="w-full h-auto object-center object-contain">
                                 </span>
                                 <h3 class="text-base ml-6">
                                     <%= set.name %>

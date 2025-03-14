@@ -1,41 +1,28 @@
 
 
-const fs = require("fs");
-const { readTopics } = require("../utils/readTopics");
+const setModel = require("../models/sets")
+const topicModel = require("../models/topics");
 
 
-module.exports.newSet = (req, res) => {
-    let { topic, setname, questions } = req.body;
-    questions = JSON.parse(questions); // parse string into json
+module.exports.newSet = async (req, res) => {
 
-    fs.readdir(`./data/${topic}`, (err, files) => {
-        if (files.indexOf(setname + ".json") == -1) {
-            fs.writeFile(`./data/${topic}/${setname}.json`, JSON.stringify(questions, null, 2), (err) => {
-                if (err) return res.send(err.message);
-                readTopics(function (err, data) {
-                    if (err) return res.send(err.message);
+    try {
+        let { topic, setname, questions } = req.body;
 
-                    data = data.topics;
-                    let topicInJson = data.find(t => t.name === topic)
-                    topicInJson.sets.push(setname);
-                    data = {
-                        "topics": data
-                    }
+        let availableSet = await setModel.findOne({name:setname});
+        if(availableSet) return res.status(400).json({message: "This set is already existed. Please change the set's name."})
+        
+        questions = JSON.parse(questions); // parse string into json
 
-                    fs.writeFile("./data/topics.json", JSON.stringify(data), (err) => {
-                        if (err) return res.send(err.message)
-                        res.redirect('/admin/panel');
+        let createdSet = await setModel.create({ name: setname, topicId: topic, questions });
+        let topicObject = await topicModel.findOne({ _id: topic });
+        topicObject.sets.push({ id: createdSet._id, name: createdSet.name });
+        await topicObject.save();
 
-                    })
-                })
-            })
-        } else {
-            return res.send("this file existed");
-        }
-    })
-
-
-
-
-
+        res.redirect("/admin/panel");
+    } catch (err) {
+        res.status(400).json({
+            message: err.message
+        })
+    }
 }

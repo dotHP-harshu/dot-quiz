@@ -26,6 +26,7 @@ const { adminLoginPage } = require('./routes/adminLogin');
 const { authAdmin } = require('./routes/authAdmin');
 const { adminAuthorisation } = require('./middlewares/adminAuthorisation');
 const { logoutAdmin } = require('./routes/logoutAdmin');
+const { connectDB } = require('./connection/connectdb');
 
 
 
@@ -39,8 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.get('/', renderHome);
 app.get('/sets/:topicname', sets)
-app.get('/sets/:topicname/:set', getQuiz);
-app.post("/result/:topicname/:set", result);
+app.get('/quiz/:setId', getQuiz);
+app.post("/result/:setId", result);
 app.get('/login/admin', adminLoginPage)
 app.post('/authadmin', authAdmin);
 app.get('/admin/panel',adminAuthorisation, adminPanel);
@@ -56,6 +57,14 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+
+const startApp = async()=>{
+    try{
+        await connectDB("mongodb://127.0.0.1:27017/quiz");
+        app.listen(PORT);
+    }catch(err){
+        console.log(err)
+    }
+}
+
+startApp();

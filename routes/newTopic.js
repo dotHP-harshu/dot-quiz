@@ -1,36 +1,26 @@
-const fs = require("fs");
+const topicModel = require("../models/topics")
+
+module.exports.newTopic = async (req, res) => {
+
+    try {
+        let topicname = req.body.topicname;
 
 
-module.exports.newTopic = (req, res) => {
-    let { topicname } = req.body;
-    let topicIcon = req.file;
-
-    fs.readFile("./data/topics.json", (err, data) => {
-        if (err) {
-            fs.unlink("./public/images/"+topicIcon.filename, (err)=>{
-                if(err) return res.send(err.message)
-            })
-            return res.send(err.message);
-        }
-        data = JSON.parse(data).topics; // Get data in the form or array (parse the file into data)
+        let topic = await topicModel.find({topicname:topicname});
+        if(topic) return res.status(400).json({message:"Topic already existed in the list."})
         
-        let existedNames = data.filter((topic) => { return topic.name === topicname });
-        if (existedNames.length > 0) {
-            fs.unlink("./public/images/"+topicIcon.filename, (err)=>{
-                if(err) return res.send(err.message)
-            })
-            return res.send("Topic is already existed.");
-        }
-        data.push({ id: `${data.length + 1}`, name: topicname, img: `/images/${topicIcon.filename}`, "sets":[]}); // push the topic name in the json file
-        let updatedTopics = {
-            "topics" : data
-        }
-        fs.mkdir(`./data/${topicname}`, (err)=>{
-            if(err) return res.send(err.message)
-        });
-        fs.writeFile("./data/topics.json", JSON.stringify(updatedTopics), (err)=>{
-            if(err) return res.send(err.message);
-        });
-        res.redirect('/admin/panel');
-    })
+        
+        let iconBuffer = req.file.buffer;
+        let icontype = req.file.mimetype;
+
+        await topicModel.create({ topicname, icon: iconBuffer, icontype })
+        
+        res.redirect("/admin/panel")
+
+    } catch (err) {
+        res.status(400).json({
+            message: err.message
+        })
+    }
+
 }
