@@ -13,20 +13,50 @@
 </head>
 
 <body class="bg-[var(--dark-bg)] text-white select-none overflow-x-hidden">
+
+    <!-- -------- Rules ---------- -->
+    <div id="rules-wrapper"
+        class="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-[#ffffff2f] max-mobile:px-4 z-50 flex-col backdrop-blur-md">
+        <div id="rules" class=" flex justify-center items-center flex-col bg-[var(--dark-bg)] p-4">
+            <ul>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌Each question have 4 options.</li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌Every question have a correct option.</li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌Click on the correct opiton.</li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌Click on "next" button for next question and Click on
+                    "prev" button for previous question.
+                </li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌After attempting all questions click on submit button
+                    to submit the quiz.</li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌You have 20 seconds for each question.</li>
+                <li class="text-base max-mobile:text-sm mt-2 ">📌The quiz will be submitted after the time is over</li>
+                <p class="time text-base max-mobile:text-sm">You have total seconds</p>
+            </ul>
+            <button type="button" id="start" class="bg-[var(--green)] px-4 py-2 rounded-md mt-4">Start</button>
+        </div>
+    </div>
+    <!-- -------- Rules ---------- -->
     <!-- ------ main starts here ---------  -->
     <main class="w-full flex flex-col justify-center items-center p-10 max-mobile:p-6">
-        <header class="w-full flex items-center gap-4 mb-6">
-            <span class="w-10 h-10 inline-block p-1 bg-[#fffe] rounded-lg">
-                <img src="data:<%= icon.type %>;base64, <%= icon.img.toString('base64') %>" alt="<%= topicname %>" class="w-full h-auto object-contain object-center">
-            </span>
-            <span class="text-3xl font-extrabold">
-                <%= topicname %>/<%= set.name %>
-            </span>
+        <header class="w-full flex items-center gap-4 mb-6 justify-between max-mobile:flex-col ">
+            <div class="flex items-center gap-4">
+                <span class="w-10 h-10 inline-block p-1 bg-[#fffe] rounded-lg">
+                    <img src="data:<%= icon.type %>;base64, <%= icon.img.toString('base64') %>" alt="<%= topicname %>"
+                        class="w-full h-auto object-contain object-center">
+                </span>
+                <span class="text-3xl font-extrabold max-mobile:text-xl">
+                    <%= topicname %>/<%= set.name %>
+                </span>
+            </div>
+            <div id="timer" class="mr-10">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </div>
         </header>
 
         <div class="question-container w-full">
             <!-- ----------------- Quiz form start -------------- -->
-            <form action="/result/<%= set._id %>" onsubmit="return confirmSubmit()" method="post" class=" w-full flex flex-col ">
+            <form id="quizform" action="/result/<%= set._id %>" method="post" class=" w-full flex flex-col ">
 
                 <div class="questions px-10 max-mobile:p-0">
 
@@ -37,8 +67,8 @@
                         <div class="question w-full flex bg-[var(--dark-bg)] max-mobile:flex-col">
                             <!-- question para  -->
                             <div class="question-para w-1/2 p-8 max-mobile:w-full max-mobile:px-0">
-                                <span class="italic text-[#fffe] text-base max-mobile:text-sm">Question <%= index+1 %> of <%=
-                                            questions.length %></span>
+                                <span class="italic text-[#fffe] text-base max-mobile:text-sm">Question <%= index+1 %>
+                                        of <%= questions.length %></span>
                                 <p class="text-2xl mt-4 max-mobile:text-base"> <span class="mr-2">
                                         <%= question.id %>.
                                     </span>
@@ -47,7 +77,8 @@
                             </div>
                             <!-- question para  -->
                             <!-- options  -->
-                            <div class="question-option w-1/2 p-8 flex flex-col gap-2 items-start max-mobile:w-full max-mobile:py-0 max-mobile:text-sm">
+                            <div
+                                class="question-option w-1/2 p-8 flex flex-col gap-2 items-start max-mobile:w-full max-mobile:py-0 max-mobile:text-sm">
 
                                 <% question.options.forEach((option, opitonNumber)=>{ %>
 
@@ -86,11 +117,23 @@
                     <button type="button"
                         class="border-none outline-none px-4 py-2 max-mobile:text-sm rounded-md bg-[var(--light-bg)] cursor-pointer"
                         id="next">Next</button>
-                    <button type="submit"
+                    <button type="button"
                         class="border-none outline-none px-4 py-2 max-mobile:text-sm rounded-md bg-[var(--primary-color)] cursor-pointer"
                         id="submit">Submit</button>
                 </div>
                 <!-- --- Buttons -----  -->
+
+                <div id="submit-confirmation" style="display: none;"
+                    class="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-[#ffffff2f] max-mobile:px-4 z-50 flex-col backdrop-blur-md">
+                    <div class="p-4 rounded-md bg-[var(--dark-bg)] flex items-center justify-center flex-col">
+                        <p class="text-base max-mobile:text-sm">Are you sure you want to submit this test?</p>
+                        <div class="btns flex gap-4 items-center">
+                            <button type="button" id="no-btn" class="bg-[var(--red)] px-4 py-2 rounded-md mt-4">No</button>
+                            <button type="submit" class="bg-[var(--green)] px-4 py-2 rounded-md mt-4">Yes, Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- -------- Rules ---------- -->
 
             </form>
             <!-- ----------------- Quiz form start -------------- -->
